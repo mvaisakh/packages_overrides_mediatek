@@ -1,0 +1,15 @@
+// Copyright (C) 2021 StatiX
+// SPDX-License-Identifer: Apache-2.0
+
+java_library {
+    name: "mediatek-ims-override",
+    installable: true,
+
+    srcs: [
+        "ims/src/java/**/*.java",
+    ],
+
+    libs: [
+        "ims-common",
+    ],
+}
