@@ -7,10 +7,17 @@ java_library {
 
     srcs: [
         "ims/src/java/**/*.java",
+        "ims/src/java/**/I*.aidl",
     ],
+    aidl: {
+        include_dirs: [
+            "packages/overrides/mediatek/ims/src/java/aidl",
+        ],
+    },
 
     libs: [
         "ims-common",
         "telephony-common",
+        "framework-wifi",
     ],
 }
