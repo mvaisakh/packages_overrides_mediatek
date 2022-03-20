@@ -12,9 +12,13 @@ import com.android.ims.ImsManager;
 import com.android.telephony.Rlog;
 import android.util.Log;
 
-public abstract class ImsManagerOverride implements FeatureUpdates {
+public class ImsManagerOverride extends ImsManager {
 
     private static final String TAG = "ImsManager";
+
+    public ImsManagerOverride(Context context, int phoneId, MmTelFeatureConnectionFactory featuresFactory, SubscriptionManagerProxy subscriptionManager, SettingsProxy proxy) {
+       super(context, phoneId, featuresFactory, subscriptionManager, proxy);
+    }
 
     public static void updateImsServiceConfig(Context context, int phoneId, boolean force) {
         ImsManager mgr = ImsManager.getInstance(context, phoneId);
